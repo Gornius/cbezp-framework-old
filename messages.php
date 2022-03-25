@@ -7,9 +7,17 @@ $db = new Db("localhost", "localuser", "pwd", "bezp_lab3");
 if (isset($_REQUEST['add_message'])) {
 $name = $_REQUEST['name'];
 $type = $_REQUEST['type'];
+$id = $_REQUEST['id'];
+// var_dump($_REQUEST); die;
 $content = $_REQUEST['content'];
-if (!$db->addMessage($name,$type,$content))
-echo "Adding new message failed";
+if (empty($id)) {
+    if (!$db->addMessage($name,$type,$content))
+    echo "Adding new message failed";
+}
+else {
+    if (!$db->editMessage($id, $name,$type,$content))
+    echo "Editing message failed";
+}
 }
 ?>
 <!--------------------------------------------------------------------->

@@ -38,6 +38,19 @@ class Db
         echo $sql.'<br/>';
         return $this->mysqli->query($sql);
     }
+    public function editMessage($id, $name, $type, $content)
+    {
+        $sql = "UPDATE message
+        SET
+            name = '$name',
+            type = '$type',
+            message = '$content'
+        WHERE
+            id = '$id';
+        ";
+        echo $sql.'<br/>';
+        return $this->mysqli->query($sql);
+    }
     public function getMessage($message_id)
     {
         foreach ($this->select_result as $message) {
