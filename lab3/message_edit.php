@@ -37,9 +37,7 @@ Page::display_header("Edit message");
     <td>Message content</td>
     <td>
     <label for="content"></label>
-    <textarea required type="text" name="content" id="content" rows="10" cols="40">
-        <?php echo $message->message; ?>
-    </textarea>
+    <textarea required type="text" name="content" id="content" rows="10" cols="40"><?php echo $message->message; ?></textarea>
     </td>
     </tr>
     </table>
