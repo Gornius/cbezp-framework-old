@@ -29,7 +29,7 @@ $sql = "SELECT * from message";
 $messages = $db->select($sql);
 foreach ($messages as $msg)://returned as objects
 echo "<li>";
-echo '<b>'.$msg->name.': </b>'.$msg->message ;
+echo '<a href="/message_edit.php?id=' . $msg->id . '">EDYTUJ</a> ' . '<b>'.$msg->name.': </b>'.$msg->message ;
 echo "</li>";
 endforeach;
 ?>
